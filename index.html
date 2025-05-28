@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Segment for Meta Data -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dynamic Time-Based Webpage</title>
@@ -18,10 +19,13 @@
   </style>
 </head>
 <body>
+
+  <!-- Header Values for the Website -->
   <h1>Reid McClellan</h1>
   <p>COP4813: Web Development</p>
   <p>Welcome to my dynamic webpage!</p>
 
+  <!-- Java for the changing colors -->
   <script>
     function setBackgroundByTime() 
     {
@@ -52,6 +56,7 @@
       document.body.style.backgroundColor = hex;
       document.body.style.color = textColor;
     }
+    //Event lstener for time
     window.addEventListener('DOMContentLoaded', setBackgroundByTime);
   </script>
 </body>
