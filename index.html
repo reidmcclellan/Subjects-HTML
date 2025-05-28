@@ -29,24 +29,24 @@
       const hour = new Date().getHours();
       let bg, textColor;
 
-      if (hour >= 6 && hour < 12) {
-        // Morning (6am–12pm)
-        bg = '#FFF9C4';      // pale yellow
+      if (hour >= 6 && hour < 12) 
+      {
+        bg = '#FF5733';      // RED
         textColor = '#333';
       }
-      else if (hour >= 12 && hour < 18) {
-        // Afternoon (12pm–6pm)
-        bg = '#BBDEFB';      // light blue
+      else if (hour >= 12 && hour < 18) 
+      {
+        bg = '#33FFBD';      // BLUE
         textColor = '#222';
       }
-      else if (hour >= 18 && hour < 21) {
-        // Evening (6pm–9pm)
-        bg = '#FFCCBC';      // soft orange
+      else if (hour >= 18 && hour < 21) 
+      {
+        bg = '#FFBD33';      // ORANGE
         textColor = '#222';
       }
-      else {
-        // Night (9pm–6am)
-        bg = '#283593';      // deep navy
+      else 
+      {
+        bg = '#4850A6';      // deep navy
         textColor = '#EEE';
       }
 
