@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Time-Based Webpage</title>
+  <style>
+    /* simple reset & center text */
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: sans-serif;
+      text-align: center;
+      transition: background-color 0.5s ease;
+      color: #222;
+    }
+    h1 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <h1>Reid McClellan</h1>
+  <p>COP4930: Web Development</p>
+  <p>Computer Science</p>
+  <p>Welcome to my dynamic webpage!</p>
+
+  <script>
+    // 4.1 Time-based background changer
+    function setBackgroundByTime() {
+      const hour = new Date().getHours();
+      let bg, textColor;
+
+      if (hour >= 6 && hour < 12) {
+        // Morning (6am–12pm)
+        bg = '#FFF9C4';      // pale yellow
+        textColor = '#333';
+      }
+      else if (hour >= 12 && hour < 18) {
+        // Afternoon (12pm–6pm)
+        bg = '#BBDEFB';      // light blue
+        textColor = '#222';
+      }
+      else if (hour >= 18 && hour < 21) {
+        // Evening (6pm–9pm)
+        bg = '#FFCCBC';      // soft orange
+        textColor = '#222';
+      }
+      else {
+        // Night (9pm–6am)
+        bg = '#283593';      // deep navy
+        textColor = '#EEE';
+      }
+
+      document.body.style.backgroundColor = bg;
+      document.body.style.color = textColor;
+    }
+
+    // run on load
+    window.addEventListener('DOMContentLoaded', setBackgroundByTime);
+  </script>
+</body>
+</html>
