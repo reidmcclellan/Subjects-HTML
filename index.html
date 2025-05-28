@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dynamic Time-Based Webpage</title>
   <style>
-    /* simple reset & center text */
-    body {
+    body 
+    {
       margin: 0;
       padding: 2rem;
       font-family: sans-serif;
@@ -20,41 +20,39 @@
 <body>
   <h1>Reid McClellan</h1>
   <p>COP4930: Web Development</p>
-  <p>Computer Science</p>
   <p>Welcome to my dynamic webpage!</p>
 
   <script>
     // 4.1 Time-based background changer
-    function setBackgroundByTime() {
+    function setBackgroundByTime() 
+    {
       const hour = new Date().getHours();
-      let bg, textColor;
+      let hex, textColor;
 
       if (hour >= 6 && hour < 12) 
       {
-        bg = '#FF5733';      // RED
+        hex = '#FF5733';      // RED
         textColor = '#333';
       }
       else if (hour >= 12 && hour < 18) 
       {
-        bg = '#33FFBD';      // BLUE
+        hex = '#33FFBD';      // BLUE
         textColor = '#222';
       }
       else if (hour >= 18 && hour < 21) 
       {
-        bg = '#FFBD33';      // ORANGE
+        hex = '#FFBD33';      // ORANGE
         textColor = '#222';
       }
       else 
       {
-        bg = '#4850A6';      // deep navy
+        hex = '#4850A6';      // NAVY
         textColor = '#EEE';
       }
 
-      document.body.style.backgroundColor = bg;
+      document.body.style.backgroundColor = hex;
       document.body.style.color = textColor;
     }
-
-    // run on load
     window.addEventListener('DOMContentLoaded', setBackgroundByTime);
   </script>
 </body>
