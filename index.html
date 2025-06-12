@@ -1,63 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Segment for Meta Data -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dynamic Time-Based Webpage</title>
+  <title>Time-of-Day Image Switcher</title>
   <style>
-    body 
-    {
+    body {
       margin: 0;
       padding: 2rem;
       font-family: sans-serif;
       text-align: center;
-      transition: background-color 0.5s ease;
-      color: #222;
     }
-    h1 { margin-top: 0; }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    h1 { margin-bottom: 0.2em; }
   </style>
 </head>
 <body>
-
-  <!-- Header Values for the Website -->
   <h1>Reid McClellan</h1>
-  <p>COP4813: Web Development</p>
-  <p>Welcome to my dynamic webpage!</p>
+  <p>COP4930: Web Development</p>
+  <p>Computer Science</p>
+  <p>The picture changes based on the time.</p>
 
-  <!-- Java for the changing colors -->
+  <img id="timeImg" src="" alt="Time-of-day scene">
+
   <script>
-    function setBackgroundByTime() 
-    {
+    function setImageByTime() {
       const hour = new Date().getHours();
-      let hex, textColor;
+      const morningURL   = 'http://github.com/reidmcclellan/Time-of-Day-HTML/blob/main/images/sunrise.jpg';
+      const afternoonURL = 'https://github.com/reidmcclellan/Time-of-Day-HTML/blob/main/images/afternoon.jpg';
+      const nightURL     = 'https://github.com/reidmcclellan/Time-of-Day-HTML/blob/main/images/night.jpg';
+      let chosenURL;
 
-      if (hour >= 6 && hour < 12) 
-      {
-        hex = '#FF5733';      // RED
-        textColor = '#333';
-      }
-      else if (hour >= 12 && hour < 18) 
-      {
-        hex = '#33FFBD';      // BLUE
-        textColor = '#222';
-      }
-      else if (hour >= 18 && hour < 21) 
-      {
-        hex = '#FFBD33';      // ORANGE
-        textColor = '#222';
-      }
-      else 
-      {
-        hex = '#4850A6';      // NAVY
-        textColor = '#EEE';
+      if (hour >= 6 && hour < 12) {
+        chosenURL = morningURL;
+      } else if (hour >= 12 && hour < 18) {
+        chosenURL = afternoonURL;
+      } else {
+        chosenURL = nightURL;
       }
 
-      document.body.style.backgroundColor = hex;
-      document.body.style.color = textColor;
+      const imgEl = document.getElementById('timeImg');
+      imgEl.src = chosenURL;
+      imgEl.alt = `Scene for hour ${hour}`;
     }
-    //Event lstener for time
-    window.addEventListener('DOMContentLoaded', setBackgroundByTime);
+
+    window.addEventListener('DOMContentLoaded', setImageByTime);
   </script>
 </body>
 </html>
