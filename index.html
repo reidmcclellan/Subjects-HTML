@@ -31,11 +31,12 @@
   <script>
     function setImageByTime() {
       const hour = new Date().getHours();
-      const morningURL   = 'http://github.com/reidmcclellan/Time-of-Day-HTML/blob/main/images/sunrise.jpg';
-      const afternoonURL = 'https://github.com/reidmcclellan/Time-of-Day-HTML/blob/main/images/afternoon.jpg';
-      const nightURL     = 'https://github.com/reidmcclellan/Time-of-Day-HTML/blob/main/images/night.jpg';
-      let chosenURL;
 
+      const morningURL   = 'https://raw.githubusercontent.com/reidmcclellan/Time-of-Day-HTML/main/images/sunrise.jpg';
+      const afternoonURL = 'https://raw.githubusercontent.com/reidmcclellan/Time-of-Day-HTML/main/images/afternoon.jpg';
+      const nightURL     = 'https://raw.githubusercontent.com/reidmcclellan/Time-of-Day-HTML/main/images/night.jpg';
+
+      let chosenURL;
       if (hour >= 6 && hour < 12) {
         chosenURL = morningURL;
       } else if (hour >= 12 && hour < 18) {
@@ -53,3 +54,4 @@
   </script>
 </body>
 </html>
+
