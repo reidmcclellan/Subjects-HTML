@@ -32,9 +32,10 @@
     function setImageByTime() {
       const hour = new Date().getHours();
 
-      const morningURL   = 'https://raw.githubusercontent.com/reidmcclellan/Time-of-Day-HTML/main/images/sunrise.jpg';
-      const afternoonURL = 'https://raw.githubusercontent.com/reidmcclellan/Time-of-Day-HTML/main/images/afternoon.jpg';
-      const nightURL     = 'https://raw.githubusercontent.com/reidmcclellan/Time-of-Day-HTML/main/images/night.jpg';
+      const morningURL   = 'images/sunrise.jpg';
+      const afternoonURL = 'images/afternoon.jpg';
+      const nightURL     = 'images/night.jpg';
+
 
       let chosenURL;
       if (hour >= 6 && hour < 12) {
