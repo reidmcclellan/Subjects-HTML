@@ -3,56 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Time-of-Day Image Switcher</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 2rem;
-      font-family: sans-serif;
-      text-align: center;
-    }
-    img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    h1 { margin-bottom: 0.2em; }
-  </style>
+  <title>Nested Menu Site</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Reid McClellan</h1>
   <p>COP4930: Web Development</p>
   <p>Computer Science</p>
-  <p>The picture changes based on the time.</p>
 
-  <img id="timeImg" src="" alt="Time-of-day scene">
+  <div class="menu">
+    <div class="subject" data-target="mathTopics">Mathematics</div>
+    <ul id="mathTopics" class="topics">
+      <li><a href="topics/algebra.html">Algebra</a></li>
+      <li><a href="topics/geometry.html">Geometry</a></li>
+      <li><a href="topics/calculus.html">Calculus</a></li>
+      <li><a href="topics/statistics.html">Statistics</a></li>
+    </ul>
 
-  <script>
-    function setImageByTime() {
-      const hour = new Date().getHours();
+    <div class="subject" data-target="sciTopics">Science</div>
+    <ul id="sciTopics" class="topics">
+      <li><a href="topics/physics.html">Physics</a></li>
+      <li><a href="topics/chemistry.html">Chemistry</a></li>
+      <li><a href="topics/biology.html">Biology</a></li>
+      <li><a href="topics/astronomy.html">Astronomy</a></li>
+    </ul>
 
-      const morningURL   = 'images/sunrise.jpg';
-      const afternoonURL = 'images/afternoon.jpg';
-      const nightURL     = 'images/night.jpg';
+    <div class="subject" data-target="histTopics">History</div>
+    <ul id="histTopics" class="topics">
+      <li><a href="topics/ancient.html">Ancient</a></li>
+      <li><a href="topics/medieval.html">Medieval</a></li>
+      <li><a href="topics/modern.html">Modern</a></li>
+      <li><a href="topics/world.html">World</a></li>
+    </ul>
+  </div>
 
-
-      let chosenURL;
-      if (hour >= 6 && hour < 12) {
-        chosenURL = morningURL;
-      } else if (hour >= 12 && hour < 18) {
-        chosenURL = afternoonURL;
-      } else {
-        chosenURL = nightURL;
-      }
-
-      const imgEl = document.getElementById('timeImg');
-      imgEl.src = chosenURL;
-      imgEl.alt = `Scene for hour ${hour}`;
-    }
-
-    window.addEventListener('DOMContentLoaded', setImageByTime);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
